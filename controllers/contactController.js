@@ -69,7 +69,7 @@ const deleteContact = asyncHandler(async (req, res) => {
     throw new Error("Contact not found");
   }
   await Contact.deleteOne({_id: req.params.id});
-  res.status(200).json({message: `Delete contact for ${req.params.id}`});
+  res.status(200).json(contact);
 });
 
 module.exports = {getContacts, createContact, getContact, updateContact, deleteContact};
